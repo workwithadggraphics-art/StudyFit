@@ -1356,6 +1356,16 @@ function loadSession(){
 function saveSession(s){localStorage.setItem("sf_session",JSON.stringify(s));}
 function clearSession(){localStorage.removeItem("sf_session");}
 
+  // Safely escape HTML special characters so answer options
+// containing <tags>, &, quotes etc. display as plain text
+function escHtml(str){
+  return String(str)
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#39;");
+}
 /* ═══════════════════════════════════════
    QUIZ STATE
 ═══════════════════════════════════════ */
@@ -1590,7 +1600,7 @@ const App={
     q.opts.forEach((opt,i)=>{
       const btn=document.createElement("button");
       btn.className="opt-btn"+(saved===i?" selected":"");
-      btn.innerHTML=`<span class="opt-letter">${LETTERS[i]}</span><span>${opt}</span>`;
+      btn.innerHTML=`<span class="opt-letter">${LETTERS[i]}</span><span>${escHTML(opt)}</span>`;
       btn.onclick=()=>this.selectAns(i);
       opts.appendChild(btn);
     });
