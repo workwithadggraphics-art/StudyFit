@@ -1719,18 +1719,17 @@ const App={
       const div=document.createElement("div");
       div.className="rev-item"+(isCorrect?"":" wrong");
       const chosenText=chosen!==null
-        ?`${LETTERS[chosen]}. ${q.opts[chosen]}`
-        :"Not answered";
-      div.innerHTML=`<div class="rev-q">${idx+1}. ${q.q}</div>
-        <div class="rev-ans">
-          ${isCorrect
-            ?`<span class="ctag">✓ Your answer (Correct):</span> ${chosenText}`
-            :`<span class="wtag">✗ Your answer:</span> ${chosenText}
-             <br><span class="ctag">✓ Correct answer:</span> ${LETTERS[q.correctIdx]}. ${q.opts[q.correctIdx]}`
-          }
-        </div>
-        <div class="explain-box show"><strong>💡 </strong>${q.exp}</div>`;
-      revList.appendChild(div);
+  ?`${LETTERS[chosen]}. ${escHtml(q.opts[chosen])}`
+  :"Not answered";
+div.innerHTML=`<div class="rev-q">${idx+1}. ${escHtml(q.q)}</div>
+  <div class="rev-ans">
+    ${isCorrect
+      ?`<span class="ctag">✓ Your answer (Correct):</span> ${chosenText}`
+      :`<span class="wtag">✗ Your answer:</span> ${chosenText}
+       <br><span class="ctag">✓ Correct answer:</span> ${LETTERS[q.correctIdx]}. ${escHtml(q.opts[q.correctIdx])}`
+    }
+  </div>
+  <div class="explain-box show"><strong>💡 </strong>${q.exp}</div>`;
     });
   },
 
