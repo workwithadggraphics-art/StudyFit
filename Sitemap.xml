@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="studyfitng.netlify.app">
+<urlset xmlns="https://studyfitng.netlify.app/">
   <url>
     <loc>studyfitng.netlify.app</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 </urlset>
-studyfitng.netlify.app/sitemap.xml
+https://studyfitng.netlify.app/sitemap.xml
