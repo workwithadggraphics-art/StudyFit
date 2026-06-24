@@ -493,6 +493,23 @@ header{
 }
 .toast.show{transform:translateX(-50%) translateY(0);}
 
+/* Designer credit */
+.back-link{
+  text-align:center;
+  padding:18px 16px 32px;
+  font-size:13px;
+  color:var(--muted);
+  position:relative;
+  z-index:1;
+}
+.back-link a{
+  color:var(--blue-bright);
+  font-weight:700;
+  text-decoration:none;
+}
+.back-link a:hover{
+  text-decoration:underline;
+}
 /* Responsive */
 @media(max-width:500px){
   .waec-chip,.greet-txt{display:none!important;}
@@ -819,7 +836,6 @@ onAuthStateChanged(auth, async (firebaseUser) => {
         <div class="auth-divider">Already have an account?
           <span class="auth-link" onclick="App.switchTab('signin')">Sign in</span>
         </div>
-  <div class="back-link"> Designed by <a href=" https://wa.me/2348105892733">adggraphics</a>
     </div>
       </div>
     </div>
@@ -958,6 +974,10 @@ onAuthStateChanged(auth, async (firebaseUser) => {
   </div>
 </div>
 
+<!-- Designer credit -->
+<div class="back-link">
+  Designed by <a href="https://wa.me/2348105892733">adggraphics</a>
+</div>
 </div><!-- /wrap -->
 <div class="toast" id="toast"></div>
 
